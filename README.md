@@ -18,5 +18,4 @@ $import_users | foreach-object {new-aduser `
 -userprincipalname $_.userprincipalname `
 -samaccountname $_.samaccountname `
 -accountpassword $(convertto-securestring $_.password -asplaintext -force) `
--enabled $true `
-}
+-enabled $true}
