@@ -1,4 +1,6 @@
-#Creating New Ad Users from an HR Excel file. #Convert .xls file to a .csv file and store on the c:\ drive of the lab client computer
+#Creating New Ad Users from an HR Excel file. 
+
+#Convert .xls file to a .csv file and store on the c:\ drive of the lab client computer
 
 $import_users = import-csv -path c:\newusers.csv
 
