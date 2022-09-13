@@ -1,1 +1,18 @@
+#Creating New Ad Users from an HR Excel file. #Convert .xls file to a .csv file and store on the c:\ drive of the lab client computer
+
+$import_users = import-csv -path c:\newusers.csv
+
+$import_users | foreach-object {new-aduser -name $($_.firstname + " " + $_.lastname) `
+-givenname $.firstname `
+-surname $_.lastname `
+-department $.department `
+-state $_.state `
+-employeeid $.employeeid `
+-displayname $($_.firstname + " " + $_.lastname) `
+-office $.office `
+-userprincipalname $_.userprincipalname `
+-samaccountname $_.samaccountname `
+-accountpassword $(convertto-securestring $_.password -asplaintext -force) `
+-enabled $true}
+
 
