@@ -1,0 +1,8 @@
+# Create the new folder and specify the location on the e drive of the host machine. Use force parameter if nesting folders. 
+
+New-Item “e:\Sharedfolder\childfolder" –type directory -force
+
+# Then, turn the new folder into a shared folder with:
+
+New-SMBShare –Name “childfolder” –Path “e:\Sharedfolder” `
+
