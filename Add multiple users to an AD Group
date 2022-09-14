@@ -1,0 +1,8 @@
+# Easiest way to add members to a group is to use the following script, provided you know the SAM Account Name for the members you wish to add and there's not many.
+
+Add-ADGroupMember -Identity "group name" -Members SAMAccoutName,SAMAccountName
+
+# Better option for a larger number to add to a group is to first get the users based on a filter, and then add them to the group. 
+# To get the users, use the Get-ADUser cmdlet, specifying the users we wantin the new group by job title, then pipe those users into a new-adgroupmember loop.
+
+Get-ADUser -Filter "title -eq 'manager'" | ForEach-Object { Add-ADGroupMember -Identity "research" -Members $_ }
