@@ -1,0 +1,4 @@
+# Use the get-printer cmdlet to generate the list of computers installed on a computer, then pipe those results to a sort funtion to select the needed attributes 
+# and then pipe the results into a grid:
+
+Get-Printer | Select-Object Name, ComputerName, Type, DriverName, Shared, Published | out-gridview 
