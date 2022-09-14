@@ -1,0 +1,4 @@
+# Simple cmdlet followed by the name or names of the computer(s) to be restarted, separated by a comma.  A force parameter might be necessary if there are users logged
+# in to the remote machine.
+
+Restart-Computer -ComputerName LON-DC1, LON-SVR1 -force
