@@ -1,0 +1,12 @@
+#Script for locating and unlocking a specific user account
+#Make sure that the AD module is uploaded into PS with:
+
+Import-Module activedirectory
+
+#Then...find the specific users by listing the names associated with all locked out accounts:
+
+Search-ADAccount –LockedOut | select name
+
+#Then pipe the results into an unlock cmdlet and use the confirm parameter to selectively unlock specific account(s).
+
+Search-ADAccount -LockedOut | Unlock-ADAccount -confirm
