@@ -1,0 +1,4 @@
+# First, we need to get all the files in the Downloads folder and then compare them to the metric of 60+ days old by piping the result of the get-childitem cmdlet to
+# a comparison operator, the results of which are then piped to the remove-item cmdlet.
+
+Get-ChildItem "C:\users\user_name\downloads" | Where creationtime -le (Get-Date).AddDays(-60) | Remove-Item
