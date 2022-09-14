@@ -1,0 +1,4 @@
+# Start by getting the specific service that you want to target on the remote computer with the get-service cmdlet, then pipe the result to a stop-service or
+# a start-service cmdlet.   
+
+Get-Service <service-name> -ComputerName <remote-pc-name> | Stop-Service 
